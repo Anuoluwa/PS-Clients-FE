@@ -1,0 +1,52 @@
+@import "../../styles/global.scss";
+
+._{
+
+    margin-top:40px;
+    
+    .container{
+        @extend %container;
+        .content{
+            background-color: $indigo;
+            border-radius: 10px;
+            width:20vw;
+            padding:30px 15px;
+            -webkit-box-shadow: 3px 9px 11px -6px rgba(0,0,0,0.67);
+            -moz-box-shadow: 3px 9px 11px -6px rgba(0,0,0,0.67);
+            box-shadow: 3px 9px 11px -6px rgba(0,0,0,0.67);
+            .filter_title{
+                color: $white;
+                display: flex;
+                align-items: center;
+                padding-bottom:10px;
+                border-bottom: 2px solid $yellow;
+                text-transform: uppercase;
+                .filter_icon{
+                    font-size:25px;
+                    margin-right:10px;
+                    color:$yellow;
+                }
+                h3{
+                    font-size:18px;
+                }
+            }
+            .filter_list{
+                ul{
+                    // list-style-type: none;
+                    li{
+                        color:$white;
+                        padding:10px 0;
+                        cursor: pointer;
+                        transition: .5s;
+                        font-weight: 600;
+                        font-size:15px;
+                        &:hover{
+                            color:$yellow;
+                            // text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
