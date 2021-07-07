@@ -1,17 +1,90 @@
 @import '../../styles/global.scss';
 
 ._{
+    // padding:0 30px;
     .container{
         .content{
             .header{
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
                 .header_title{
+                    display: flex;
+                    align-items: flex-end;
                     h2{
                         color:$black;
+                        margin-right:10px;
                     }
                     small{
                         color:$text-gray;
+                    }
+                }
+                .search_input{
+                    width:350px;
+                }
+            }
+            .cards_container{
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+                justify-items: center; // to center all grid items in the container
+                grid-gap: 40px 20px;
+                margin-top:40px;
+                @media (max-width:320px) {
+                        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+                    }
+                .card_item{
+                    width:260px;
+                    background-color: $white;
+                    padding:8px;
+                    border-radius: 8px;
+                    -webkit-box-shadow: 3px 9px 11px -6px rgba(0,0,0,0.67);
+                    -moz-box-shadow: 3px 9px 11px -6px rgba(0,0,0,0.67);
+                    box-shadow: 3px 9px 11px -6px rgba(0,0,0,0.67);
+                    cursor: pointer;
+                    .drug_image{
+                        width:100%;
+                        height: 200px;
+                        img{
+                            width:100%;
+                            height:100%;
+                            object-fit: cover;
+                            border-radius: 10px;
+                        }
+                    }
+                    .details{
+                        padding:0 10px;
+                        .text{
+                            h3{
+                                margin:10px 0;
+                            }
+                            p{
+                                color:$text-gray;
+                                font-size:15px;
+                            }
+                        }
+                        .price_order{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            margin:10px 0;
+                            .order_button{
+                               width:inherit;
+                               font-size: 12px;
+                               border-radius: 4px;
+                               height:inherit;
+                               padding:5px 10px;
+                               display: flex;
+                               align-items: center;
+                               -webkit-box-shadow: 3px 9px 11px -6px rgba(0,0,0,0.67);
+                               -moz-box-shadow: 3px 9px 11px -6px rgba(0,0,0,0.67);
+                               box-shadow: 3px 9px 11px -6px rgba(0,0,0,0.67);
+                               .order_icon{
+                                   color: $white !important;
+                                   font-size: 16px;
+                                   margin-right:5px;
+                               }
+                            }
+                        }
                     }
                 }
             }

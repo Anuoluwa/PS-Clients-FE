@@ -1,5 +1,6 @@
 import React from 'react';
 import FilterSection from '../FilterSection';
+import ProductShowcase from '../ProductShowcase';
 import styles from './index.module.scss';
 
 const ProductSection = () => {
@@ -9,7 +10,7 @@ const ProductSection = () => {
                 <FilterSection />
             </div>
             <div className={styles.product_showcase}>
-
+                <ProductShowcase />
             </div>
         </div>
     )

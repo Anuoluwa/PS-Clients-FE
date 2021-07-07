@@ -1,3 +1,5 @@
+@import '../../styles/global.scss';
+
 .form_group{
     position: relative;
     .input_label{
@@ -7,12 +9,14 @@
             border: 1px solid $indigo;
             box-sizing: border-box;
             backdrop-filter: blur(150px);
-            border-radius: 15px;
-            height: 60px;
+            border-radius: 10px;
+            height: 45px;
             width:100%;
             outline: transparent !important;
-            padding-left:50px;
-            padding-top:20px;
+            padding-left:10px;
+            // &::placeholder{
+
+            // }
         }
     }
     .input_icon{
