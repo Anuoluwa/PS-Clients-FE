@@ -1,13 +1,17 @@
 @import '../../styles/global.scss';
 
 ._{
-    // padding:0 30px;
     .container{
         .content{
             .header{
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                position: sticky;
+                top: 0;
+                background-color: $bg-gray;
+                padding:20px 0;
+                z-index:99;
                 .header_title{
                     display: flex;
                     align-items: flex-end;
@@ -37,10 +41,12 @@
                     background-color: $white;
                     padding:8px;
                     border-radius: 8px;
-                    -webkit-box-shadow: 3px 9px 11px -6px rgba(0,0,0,0.67);
-                    -moz-box-shadow: 3px 9px 11px -6px rgba(0,0,0,0.67);
-                    box-shadow: 3px 9px 11px -6px rgba(0,0,0,0.67);
+                    box-shadow: $general-box-shadow;
                     cursor: pointer;
+                    transition: 800ms;
+                    &:hover{
+                        transform: scale(1.02);
+                    }
                     .drug_image{
                         width:100%;
                         height: 200px;
@@ -75,9 +81,7 @@
                                padding:5px 10px;
                                display: flex;
                                align-items: center;
-                               -webkit-box-shadow: 3px 9px 11px -6px rgba(0,0,0,0.67);
-                               -moz-box-shadow: 3px 9px 11px -6px rgba(0,0,0,0.67);
-                               box-shadow: 3px 9px 11px -6px rgba(0,0,0,0.67);
+                               box-shadow: $general-box-shadow;
                                .order_icon{
                                    color: $white !important;
                                    font-size: 16px;
@@ -87,6 +91,9 @@
                         }
                     }
                 }
+            }
+            .pagination_container{
+                margin-top:50px;
             }
         }
     }

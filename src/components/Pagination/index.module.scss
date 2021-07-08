@@ -1,0 +1,57 @@
+@import '../../styles/global.scss';
+
+._{
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .display_text{
+            p{
+                color:$text-gray;
+            }
+        }
+        .page_btn_container{
+            display: flex;
+            align-items: center;
+            > * {
+                margin-right:20px;
+                transition: .5s;
+                &:last-of-type{
+                    margin-right: 0;
+                }
+            }
+            .num_btn{
+                background-color: transparent;
+                color:$text-gray;
+                width:inherit;
+                height: inherit;
+                border-radius: 50%;
+                align-self: center;
+                &:hover{
+                    background-color: $indigo;
+                    color: $white;
+                    box-shadow: $general-box-shadow;
+                    padding:8px 12px;
+                }
+            }
+
+            .active_btn{
+                background-color: $indigo;
+                color: $white;
+                box-shadow: $general-box-shadow;
+                // filter: drop-shadow(2px 2px 2px $indigo);
+                padding:8px 12px;
+            }
+
+            .direction_btn{
+                background-color: $white;
+                color:$text-gray;
+                width:100%;
+                height: 100%;
+                border-radius: 50%;
+                padding:8px 10px;
+                box-shadow: $general-box-shadow;
+            }
+        }
+    }
+}

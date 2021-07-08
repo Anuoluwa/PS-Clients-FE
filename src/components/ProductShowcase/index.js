@@ -1,6 +1,7 @@
 import React from 'react';
 import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { PrimaryButton } from '../../elements/CustomButton';
+import Pagination from '../Pagination';
 import SearchComponent from '../SearchComponent';
 import styles from './index.module.scss';
 
@@ -12,7 +13,7 @@ const ProductShowcase = () => {
                     <div className={styles.header}>
                         <div className={styles.header_title}>
                             <h2>All Drugs</h2>
-                            <small>500</small>
+                            <small>500 Products Found</small>
                         </div>
                         <div className={styles.search_input}>
                            <SearchComponent 
@@ -110,6 +111,9 @@ const ProductShowcase = () => {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div className={styles.pagination_container}>
+                        <Pagination />
                     </div>
                 </div>
             </div>
