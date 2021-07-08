@@ -7,7 +7,7 @@ const Nav = () => {
         <div className={styles._}>
             <div className={styles.container}>
                 <div className={styles.logo}>
-                    <p><strong>LOGO</strong></p>
+                    <p><strong>PharmaServ</strong></p>
                 </div>
                 <div className={styles.nav_menu}>
                     <ul className={styles.menu_list}> 
