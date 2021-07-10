@@ -30,19 +30,12 @@
             }
             .filter_list{
                 ul{
-                    // list-style-type: none;
-                    li{
-                        color:$pale_purple;
-                        padding:10px 0;
-                        cursor: pointer;
-                        transition: .5s;
-                        font-weight: 600;
-                        font-size:15px;
-                        &:hover{
-                            color:$yellow;
-                            // text-decoration: underline;
-                        }
-                    }
+                   list-style-type: disc; 
+                   transition:800ms;
+                   p{
+                       color: $pale-purple;
+                       font-style: italic;
+                   }  
                 }
             }
         }

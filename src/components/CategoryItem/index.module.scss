@@ -1,0 +1,17 @@
+@import "../../styles/global.scss";
+
+li.list_item{
+    color:$pale_purple;
+    padding:10px 0;
+    cursor: pointer;
+    transition: 800ms;
+    font-weight: 600;
+    font-size:15px;
+    text-transform: capitalize;
+    &:hover{
+        color:$yellow;
+        position: relative;
+        right:-10px;
+        // text-decoration: underline;
+    }
+}
