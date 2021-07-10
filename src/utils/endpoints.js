@@ -1,0 +1,1 @@
+export const BASE_URL = "https://pharmaserv-ng.herokuapp.com/api/v1"

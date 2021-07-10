@@ -1,6 +1,6 @@
 import React from 'react';
 import FilterSection from '../FilterSection';
-import ProductShowcase from '../ProductShowcase';
+import ProductShowcase from '../ProductList';
 import styles from './index.module.scss';
 
 const ProductSection = () => {
