@@ -1,13 +1,14 @@
 import React from 'react';
 import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { PrimaryButton } from '../../elements/CustomButton';
+import product_placeholder from '../../assets/images/product_placeholder.jpg'
 import styles from './index.module.scss';
 
 const ProductItem = ({productName, costPerUnit, productPhotoURL, ...item}) => {
     return(
         <div className={styles.card_item}>
             <div className={styles.drug_image}>
-                <img src={productPhotoURL} alt={productName}/>
+                <img src={productPhotoURL || product_placeholder} alt={productName}/>
             </div>
             <div className={styles.details}>
                 <div className={styles.text}>

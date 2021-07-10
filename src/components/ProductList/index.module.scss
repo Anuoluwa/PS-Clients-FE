@@ -3,30 +3,6 @@
 ._{
     .container{
         .content{
-            .header{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                position: sticky;
-                top: 0;
-                background-color: $bg-gray;
-                padding:20px 0;
-                z-index:99;
-                .header_title{
-                    display: flex;
-                    align-items: flex-end;
-                    h2{
-                        color:$black;
-                        margin-right:10px;
-                    }
-                    small{
-                        color:$text-gray;
-                    }
-                }
-                .search_input{
-                    width:350px;
-                }
-            }
             .cards_container{
                 display: grid;
                 grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));

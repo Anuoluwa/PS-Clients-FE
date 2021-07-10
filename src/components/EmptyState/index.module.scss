@@ -1,0 +1,19 @@
+@import "../../styles/global.scss";
+
+._{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    .container{
+        text-align: center;
+        .illustration{
+            margin-bottom: 20px;
+        }
+        .text{
+            text-align: center;
+            color:$text-gray;
+        }
+    }
+}

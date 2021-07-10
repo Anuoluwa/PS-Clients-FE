@@ -2,7 +2,6 @@ const { default: axios } = require("axios")
 const { BASE_URL } = require("../../utils/endpoints")
 const { LOADING_PRODUCTS_START, LOAD_PRODUCTS_SUCCESS, LOAD_PRODUCTS_FAIL } = require("./actionTypes")
 
-
 export const loadProducts = () => (dispatch) => {
     dispatch({
         type:LOADING_PRODUCTS_START
