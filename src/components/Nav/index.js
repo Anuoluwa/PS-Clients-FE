@@ -7,7 +7,7 @@ const Nav = () => {
         <div className={styles._}>
             <div className={styles.container}>
                 <div className={styles.logo}>
-                    <p><strong>PharmaServ</strong></p>
+                    <NavLink to="/"><h2><strong>PharmaServ</strong></h2></NavLink>
                 </div>
                 <div className={styles.nav_menu}>
                     <ul className={styles.menu_list}> 

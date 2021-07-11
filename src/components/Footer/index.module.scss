@@ -1,0 +1,55 @@
+@import "../../styles/global.scss";
+
+._{
+    background-color: $indigo;
+    color:$pale-purple;
+    padding-top:30px;
+    padding-bottom: 60px;
+    .container{
+        @extend %container;
+        display: flex;
+        justify-content: space-between;
+        .first_content{
+            .social_icons{
+                .social_icon{
+                    font-size: 18px;
+                    margin-right: 40px;
+                    margin-top:20px;
+                    margin-bottom:20px;
+                    cursor: pointer;
+                    &:hover{
+                        color:$yellow;
+                    }
+                }
+            }
+        }
+        .second_content{
+            .contact_info{
+                p{
+                    &:last-of-type{
+                        margin:20px 0;
+                    }
+                }
+                .contact_icon{
+                    font-size: 18px;
+                    position: relative;
+                    top:4px;
+                    margin-right: 8px;
+                }
+            }
+            .quick_links{
+                a{
+                    color:$pale-purple;
+                    text-decoration: none;
+                    margin-right:20px;
+                    &:hover{
+                        color:$yellow;
+                    }
+                    &:last-of-type{
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}

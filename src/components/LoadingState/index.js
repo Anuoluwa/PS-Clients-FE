@@ -1,5 +1,5 @@
 import React from 'react';
-import loading_icon from "../../assets/images/loading.svg";
+import loading_icon from "../../assets/images/loading_png.png";
 import styles from "./index.module.scss";
 
 const LoadingState = () => {

@@ -11,6 +11,9 @@
         align-items: center;
         .logo{
             color:$indigo;
+            a{
+                text-decoration: none;
+            }
         }
         .nav_menu{
             ul.menu_list{

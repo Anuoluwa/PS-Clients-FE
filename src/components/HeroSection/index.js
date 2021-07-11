@@ -8,7 +8,7 @@ const HeroSection = () => {
             <div className={styles.container}>
                 <div className={styles.hero_one}>
                     <div className={styles.hero_text}>
-                        <p>Welcome to Pharms 👋</p>
+                        <p>Welcome to PharmaServe 👋</p>
                         <h1 className={styles.title}>GET YOUR <span>DRUGS</span></h1>
                         <div className={styles.mini_details}>
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste repellat natus, sit amet consectetur adipisicing</p>

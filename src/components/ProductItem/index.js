@@ -3,10 +3,11 @@ import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { PrimaryButton } from '../../elements/CustomButton';
 import product_placeholder from '../../assets/images/product_placeholder.jpg'
 import styles from './index.module.scss';
+import { withRouter } from 'react-router';
 
-const ProductItem = ({productName, costPerUnit, productPhotoURL, ...item}) => {
+const ProductItem = ({productName, costPerUnit, productPhotoURL, history, ...item}) => {
     return(
-        <div className={styles.card_item}>
+        <div className={styles.card_item} onClick={() => history.push(`/product/${item?._id}`)}>
             <div className={styles.drug_image}>
                 <img src={productPhotoURL || product_placeholder} alt={productName}/>
             </div>
@@ -24,4 +25,4 @@ const ProductItem = ({productName, costPerUnit, productPhotoURL, ...item}) => {
     )
 }
 
-export default ProductItem
+export default withRouter(ProductItem) 
