@@ -6,15 +6,15 @@ import styles from './index.module.scss';
 const Layout = ({children}) => {
     return(
         <div className={styles._}>
-            <div className={styles.nav}>
+            <nav className={styles.nav}>
                 <Nav />
-            </div>
-            <div className={styles.main}>
+            </nav>
+            <main className={styles.main}>
                 {children}
-            </div>
-            <div className={styles.footer}>
+            </main>
+            <footer className={styles.footer}>
                 <Footer />
-            </div>
+            </footer>
         </div>
     )
 }
