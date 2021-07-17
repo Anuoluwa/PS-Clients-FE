@@ -21,17 +21,30 @@
             background-size: cover;
             // border-radius: 20px;
             border-right: 4px solid $white;
+            @media (max-width:$break-point-l) {
+                grid-area: 1 / 1 / 3 / 3;
+                border-right: none;
+            }
             .hero_text{
+                @extend %container;
                 color:$white;
                 width:450px;
-                padding-left:50px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 height:90vh;
+                @media (max-width:$break-point-l) {
+                    width:80%;
+                }
+                @media (max-width:$break-point-s) {
+                    width:100%;
+                }
                 h1.title{
                     font-size:70px;
                     margin:10px 0;
+                    @media (max-width:$break-point-s) {
+                        font-size:50px;
+                    }
                     span{
                         color: $yellow;
                     }
@@ -60,6 +73,9 @@
             background-size: cover; 
             border-bottom: 2px solid $white; 
             padding:10px;
+            @media (max-width:$break-point-l) {
+                display: none;
+            }
             .hero_two_content{
                 display: flex;
                 flex-direction: column;
@@ -93,6 +109,9 @@
             background-size: cover;
             border-top: 2px solid $white;
             padding:10px; 
+            @media (max-width:$break-point-l) {
+                display: none;
+            }
             .hero_three_content{
                 display: flex;
                 flex-direction: column;

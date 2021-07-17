@@ -2,8 +2,8 @@
 
 ._{
     background-color: $white;
-    padding-top:5px;
-    padding-bottom:5px;
+    padding-top:20px;
+    padding-bottom:20px;
     .container{
         @extend %container;
         display: flex;
@@ -15,10 +15,64 @@
                 text-decoration: none;
             }
         }
+        @media (max-width:$break-point-l) {
+            .hamburger_menu{
+                height:25px;
+                width:37px;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                cursor: pointer;
+                span{
+                    width:100%;
+                    height:3px;
+                    background-color:$indigo;
+                    position: absolute;
+                    
+                    &:nth-child(1){
+                        top:0px;
+                        transition: all .5s ease-in-out;
+                    }
+    
+                    &:nth-child(2){
+                        top:10px;
+                        width:75%;
+                        transition: all .5s ease-in-out;
+                    }
+    
+                    &:nth-child(3){
+                        top:20px;
+                        width:50%;
+                        transition: all .5s ease-in-out;
+                    }
+                }
+            }
+            .hamburger_menu.toggle{
+                span{
+                    &:nth-child(1){
+                        top:10px;
+                        transform: rotate(45deg);
+                    }
+                    &:nth-child(2){
+                        opacity: 0;
+                    }
+                    &:nth-child(3){
+                        top:10px;
+                        width: 100%;
+                        transform: rotate(-45deg);
+                    }
+                }
+            }    
+        }
         .nav_menu{
+            @media (max-width:$break-point-l) {
+               display: none;
+            }
             ul.menu_list{
                 list-style-type: none;
                 display: flex;
+                margin:0;
                 li{
                     margin-right:50px;
                     cursor: pointer;
@@ -36,6 +90,35 @@
                     a.selected{
                         color:$indigo;
                         font-weight: bold;
+                    }
+                }
+            }
+        }
+
+        @media (max-width:$break-point-l) {
+            .nav_menu.toggle{
+                ul.menu_list{
+                    list-style-type: none;
+                    display: flex;
+                    margin:0;
+                    li{
+                        margin-right:50px;
+                        cursor: pointer;
+                        &:last-of-type{
+                            margin-right: 0;
+                        }
+                        a{
+                            color:$text-gray;
+                            text-decoration: none;
+                            font-weight: bold;
+                            &:hover{
+                                color:$indigo;
+                            }
+                        }
+                        a.selected{
+                            color:$indigo;
+                            font-weight: bold;
+                        }
                     }
                 }
             }

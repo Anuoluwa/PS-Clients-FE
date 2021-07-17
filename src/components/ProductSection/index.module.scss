@@ -2,8 +2,11 @@
 
 ._{
     display: grid;
-    grid-template-columns: 350px 70%;
+    grid-template-columns: 300px 1fr;
     margin-top:50px;
     margin-bottom:70px;
-    padding-right: 50px;
+    @extend %container;
+    @media (max-width:$break-point-l) {
+        grid-template-columns: 0px 1fr;
+    }
 }

@@ -4,7 +4,7 @@
     position: sticky;
     top: 0;
     .container{
-        @extend %container;
+        // @extend %container;
         padding-right:30px;
         .content{
             background-color: $indigo;
@@ -12,6 +12,9 @@
             width:100%;
             padding:30px 15px;
             box-shadow: $general-box-shadow;
+            @media (max-width:$break-point-l) {
+                display: none;
+            }
             .filter_title{
                 color: $white;
                 display: flex;

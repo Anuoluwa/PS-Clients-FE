@@ -5,7 +5,13 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media (max-width:$break-point-s) {
+            flex-direction: column;
+        }
         .display_text{
+            @media (max-width:$break-point-s) {
+                margin-bottom:20px;
+            }
             p{
                 color:$text-gray;
             }
@@ -27,6 +33,11 @@
                 height: inherit;
                 border-radius: 50%;
                 align-self: center;
+                &:nth-last-of-type(2),  &:nth-last-of-type(3){
+                    @media (max-width:$break-point-s) {
+                        display: none;
+                    }
+                }
                 &:hover{
                     background-color: $indigo;
                     color: $white;

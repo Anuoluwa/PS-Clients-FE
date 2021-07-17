@@ -8,6 +8,9 @@
     box-shadow: $general-box-shadow;
     cursor: pointer;
     transition: 800ms;
+    @media (max-width:$break-point-xxs) {
+        width:100%;
+    }
     &:hover{
         transform: scale(1.02);
     }

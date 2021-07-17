@@ -9,9 +9,19 @@
     background-color: $bg-gray;
     padding:20px 0;
     z-index:99;
+    @media (max-width:$break-point-s) {
+        display: block;
+    }
     .header_title{
         display: flex;
         align-items: flex-end;
+        @media (max-width:$break-point-l) {
+            display: block;
+        }
+        @media (max-width:$break-point-s) {
+           margin-bottom: 20px;
+           display: flex;
+        }
         h2{
             color:$black;
             margin-right:10px;
@@ -22,5 +32,8 @@
     }
     .search_input{
         width:350px;
+        @media (max-width:$break-point-s) {
+            width:100%;
+         }
     }
 }

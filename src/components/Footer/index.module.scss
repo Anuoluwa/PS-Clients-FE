@@ -9,7 +9,13 @@
         @extend %container;
         display: flex;
         justify-content: space-between;
+        @media (max-width:$break-point-l) {
+            flex-direction: column-reverse;
+        }
         .first_content{
+            @media (max-width:$break-point-l) {
+                margin-top:40px;
+            }
             .social_icons{
                 .social_icon{
                     font-size: 18px;
