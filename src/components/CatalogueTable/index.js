@@ -25,31 +25,33 @@ const CatalogueTable = (props) => {
     }
 
     return(
-        <div className={styles._}>
+        <>
             <div className={styles.catalogue_header}>
                 <ProductHeader total_products={total_products}/>
             </div>
-            <div className={styles.container}>
-                <div className={styles.table_head}>
-                    <div>Product Name</div>
-                    <div>Category</div>
-                    <div>Composition</div>
-                    <div>Supplier</div>
-                    <div>NAFDAC No</div>
-                    <div>Date Uploaded</div>
-                    <div>Cost</div>
-                    <div>Expiring Day</div>
-                </div>
-                <div className={styles.table_body}>
-                    {
-                        total_products === 0 ? <EmptyState /> :
-                        products.map((product) => (
-                            <CatalogueItem key={product?._id} {...product}/>
-                        ))
-                    }
-                </div>
-            </div>  
-        </div>
+            <div className={styles._}>
+                <div className={styles.container}>
+                    <div className={styles.table_head}>
+                        <div>Product Name</div>
+                        <div>Category</div>
+                        <div>Composition</div>
+                        <div>Supplier</div>
+                        <div>NAFDAC No</div>
+                        <div>Date Uploaded</div>
+                        <div>Cost</div>
+                        <div>Expiring Day</div>
+                    </div>
+                    <div className={styles.table_body}>
+                        {
+                            total_products === 0 ? <EmptyState /> :
+                            products.map((product) => (
+                                <CatalogueItem key={product?._id} {...product}/>
+                            ))
+                        }
+                    </div>
+                </div>  
+            </div>
+        </>
     )
 }
 

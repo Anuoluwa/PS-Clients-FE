@@ -1,14 +1,16 @@
 @import "../../styles/global.scss";
 
 .header{
-    @extend %container;
+    // @extend %container;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
+    width:100%;
     background-color: $bg-gray;
-    padding:20px 0;
+    padding-top:20px;
+    padding-bottom: 20px;
     z-index:99;
     @media (max-width:$break-point-s) {
         display: block;

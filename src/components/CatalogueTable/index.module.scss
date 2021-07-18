@@ -1,7 +1,13 @@
 @import '../../styles/global.scss';
 
-._{
+.catalogue_header{
+    @extend %container;
     margin-top:40px;
+    position: sticky;
+    top:0;
+}
+
+._{
     margin-bottom:50px;
     overflow-x: auto;
         &::-webkit-scrollbar{
@@ -15,9 +21,6 @@
         &::-webkit-scrollbar-thumb{
             background :$indigo;
             border-radius: 5px;         
-        }
-        .catalogue_header{
-            @extend %container;
         }
     .container{ 
         @extend %container;  
