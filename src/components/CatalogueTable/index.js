@@ -26,10 +26,10 @@ const CatalogueTable = (props) => {
 
     return(
         <div className={styles._}>
+            <div className={styles.catalogue_header}>
+                <ProductHeader total_products={total_products}/>
+            </div>
             <div className={styles.container}>
-                <div className={styles.header}>
-                    <ProductHeader total_products={total_products}/>
-                </div>
                 <div className={styles.table_head}>
                     <div>Product Name</div>
                     <div>Category</div>
@@ -42,7 +42,7 @@ const CatalogueTable = (props) => {
                 </div>
                 <div className={styles.table_body}>
                     {
-                        products?.length == 0 ? <EmptyState /> :
+                        total_products === 0 ? <EmptyState /> :
                         products.map((product) => (
                             <CatalogueItem key={product?._id} {...product}/>
                         ))

@@ -26,9 +26,9 @@ const Footer = () => {
                         <p><FiPhone className={styles.contact_icon}/> 09072819212, 08123453446</p>
                     </div>
                     <div className={styles.quick_links}>
-                        <NavLink to="/catalogue">Catalogue</NavLink>
-                        <NavLink to="/">Register your pharmacy</NavLink>
-                        <NavLink to="/">Privacy Policy</NavLink>
+                        <p><NavLink to="/catalogue">Catalogue</NavLink></p>
+                        <p><NavLink to="/">Register your pharmacy</NavLink></p>
+                        <p><NavLink to="/">Privacy Policy</NavLink></p>
                     </div>
                 </div>
             </div>

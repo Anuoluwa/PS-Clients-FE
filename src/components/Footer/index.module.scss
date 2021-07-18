@@ -9,6 +9,7 @@
         @extend %container;
         display: flex;
         justify-content: space-between;
+        flex-direction: row-reverse;
         @media (max-width:$break-point-l) {
             flex-direction: column-reverse;
         }
@@ -44,10 +45,22 @@
                 }
             }
             .quick_links{
+                display: flex;
+                align-items: center;
+                > *{
+                    margin-right:20px;
+                }
+                @media (max-width:$break-point-xs) {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    > *{
+                        margin-bottom:20px;
+                    }
+                }
+
                 a{
                     color:$pale-purple;
                     text-decoration: none;
-                    margin-right:20px;
                     &:hover{
                         color:$yellow;
                     }

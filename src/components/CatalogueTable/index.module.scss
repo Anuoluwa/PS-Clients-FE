@@ -9,16 +9,19 @@
             height:7px;       
         }
         &::-webkit-scrollbar-track{
-            background : #CFE3FF;
+            background :$pale-purple;
             border-radius: 5px;
         }
         &::-webkit-scrollbar-thumb{
-            background : #2682DD;
+            background :$indigo;
             border-radius: 5px;         
+        }
+        .catalogue_header{
+            @extend %container;
         }
     .container{ 
         @extend %container;  
-        min-width: 900px !important;
+        min-width: 1000px !important;
         .table_head{
             display: grid;
             grid-template-columns: 1.5fr 1.5fr repeat(6, 1fr);
