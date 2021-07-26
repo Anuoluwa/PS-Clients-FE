@@ -14,10 +14,28 @@ const ProductList = (props) => {
         props.loadProducts()
     }, [])
 
+    // Get all available products
     const { products, isLoading } = props.products
     console.log(products)
 
+    //Get total number of available products
     const total_products = products?.length
+
+    
+    let product_title = "All Products" // define title globally
+
+    //change all product title to the clicked category 
+    if(props.categoryName){
+        product_title = props.categoryName
+    }
+
+    // Get product by category 
+    const products_by_category = products.filter((product) => {
+        return product?.category.category === props.categoryName
+    })
+
+    // Get total number of product in a category
+    let total_products_in_category = products_by_category?.length
 
     if(isLoading){
         return(
@@ -32,18 +50,27 @@ const ProductList = (props) => {
             <div className={styles.container}>
                 <div className={styles.content}>
                     <>
-                        <ProductHeader total_products={total_products}/>
+                        <ProductHeader product_title={product_title}  total_products={total_products} total_products_in_category={total_products_in_category}/>
                     </>
                     <div className={styles.cards_container}>
                         {
-                            products?.length == 0 ? <EmptyState message="No Product Found"/> :
+                            props.categoryName ? (
+                                products_by_category?.length == 0 ? <EmptyState message="No available product in this category"/> :
+                                products_by_category.map((product) => {
+                                    return(
+                                        <ProductItem key={product?.id} {...product} />
+                                    )
+                                })
+                            ) :
 
-                            products.map((product) => {
-                                return(
-                                    <ProductItem key={product?._id} {...product}/>
-                                )
-                            })
-                            
+                            (
+                                products?.length == 0 ? <EmptyState message="No Product Found"/> :
+                                products.map((product) => {
+                                    return(
+                                        <ProductItem key={product?._id} {...product}/>
+                                    )
+                                })
+                            )
                         }
                     </div>
                     <div className={styles.pagination_container}>

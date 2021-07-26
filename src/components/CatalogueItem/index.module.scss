@@ -13,6 +13,9 @@
     margin-bottom: 15px;
     text-transform: capitalize;
     cursor: pointer;
+    &:hover{
+        background-color: $pale-purple;
+    }
     .col{
         &:first-of-type{
             display: flex;

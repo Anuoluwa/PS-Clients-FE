@@ -1,10 +1,9 @@
 import React from 'react'; 
 import styles from './index.module.scss';
 
-const CategoryItem = ({...category}) => {
+const CategoryItem = ({handleCategoryClick, ...category}) => {
     return(
-       
-        <li className={styles.list_item}>{category?.category}</li>
+        <li onClick={handleCategoryClick} className={styles.list_item}>{category?.category}</li>
     )
 }
 

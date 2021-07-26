@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IoFilterCircleOutline } from 'react-icons/io5';
 import { connect } from 'react-redux';
 import { loadCategories } from '../../redux/actions/categoryActions';
@@ -8,10 +8,11 @@ import styles from './index.module.scss';
 
 const CategorySection = (props) => {
 
-    useEffect(() => {
+       useEffect(() => {
         props.loadCategories()
     }, [])
 
+  
     const {categories, isLoading}  = props.categories;
     console.log(categories)
     return(
@@ -28,7 +29,7 @@ const CategorySection = (props) => {
                                isLoading ? <p>Loading...</p> :
                                 categories.map((category) => {
                                     return(
-                                        <CategoryItem key={category?.id} {...category}/>
+                                        <CategoryItem handleCategoryClick={props.handleCategoryClick} key={category?._id} {...category}/>
                                     )
                                 })
                            }
