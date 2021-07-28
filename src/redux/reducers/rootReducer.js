@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
-import categoryReducer from "./categoryReducer";
+import filterReducer from "./filterReducer";
 import productReducers from "./productReducers";
 
 
 export default combineReducers({
     products:productReducers,
-    categories:categoryReducer,
+    filters:filterReducer,
 })

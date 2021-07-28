@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CategorySection from '../CategorySection';
+import FilterSection from '../FilterSection';
 import ProductList from '../ProductList';
 import styles from './index.module.scss';
 
@@ -15,7 +15,7 @@ const ProductSection = () => {
     return(
         <div className={styles._}>
             <div className={styles.category_section}>
-                <CategorySection handleCategoryClick={handleCategoryClick} />
+                <FilterSection handleCategoryClick={handleCategoryClick} />
             </div>
             <div className={styles.product_showcase}>
                 <ProductList categoryName={categoryName}/>

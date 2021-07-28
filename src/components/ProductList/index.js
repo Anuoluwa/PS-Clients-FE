@@ -36,6 +36,7 @@ const ProductList = (props) => {
 
     // Get total number of product in a category
     let total_products_in_category = products_by_category?.length
+   
 
     if(isLoading){
         return(
@@ -44,6 +45,7 @@ const ProductList = (props) => {
             </div>
         )
     }
+
 
     return(
         <div className={styles._}>
@@ -55,7 +57,7 @@ const ProductList = (props) => {
                     <div className={styles.cards_container}>
                         {
                             props.categoryName ? (
-                                products_by_category?.length == 0 ? <EmptyState message="No available product in this category"/> :
+                                total_products_in_category == 0 ? <EmptyState message="No available product in this category"/> :
                                 products_by_category.map((product) => {
                                     return(
                                         <ProductItem key={product?.id} {...product} />
@@ -64,7 +66,7 @@ const ProductList = (props) => {
                             ) :
 
                             (
-                                products?.length == 0 ? <EmptyState message="No Product Found"/> :
+                                total_products == 0 ? <EmptyState message="No Product Found"/> :
                                 products.map((product) => {
                                     return(
                                         <ProductItem key={product?._id} {...product}/>
