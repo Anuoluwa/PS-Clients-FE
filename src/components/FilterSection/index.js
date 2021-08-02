@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { IoFilterCircleOutline } from 'react-icons/io5';
+import { AiOutlineAppstore } from 'react-icons/ai';
+import { RiHospitalLine } from 'react-icons/ri';
 import { connect } from 'react-redux';
 import { loadCategories, loadSuppliers } from '../../redux/actions/filterActions';
 import FilterItem from '../FilterItem';
@@ -22,7 +23,7 @@ const FilterSection = (props) => {
             <div className={styles.container}>
                 <div className={styles.content}>
                     <div className={styles.filter_title}>
-                        <IoFilterCircleOutline className={styles.filter_icon} /> 
+                        <AiOutlineAppstore className={styles.filter_icon} /> 
                         <h3>Category Filter</h3>
                     </div>
                     <div className={styles.filter_list}>
@@ -38,7 +39,7 @@ const FilterSection = (props) => {
                         </ul>
                     </div>
                     <div className={styles.filter_title}>
-                        <IoFilterCircleOutline className={styles.filter_icon} /> 
+                        <RiHospitalLine className={styles.filter_icon} /> 
                         <h3>Supplier Filter</h3>
                     </div>
                     <div className={styles.filter_list}>
@@ -47,7 +48,7 @@ const FilterSection = (props) => {
                                isLoading ? <p>Loading...</p> :
                                 suppliers.map((supplier) => {
                                     return(
-                                        <FilterItem  key={supplier?._id} supplierName={supplier?.supplierName} {...supplier}/>
+                                        <FilterItem  handleSupplierClick={props.handleSupplierClick} key={supplier?._id} supplierName={supplier?.supplierName} {...supplier}/>
                                     )
                                 })
                             }

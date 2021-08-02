@@ -7,7 +7,7 @@
         // @extend %container;
         padding-right:30px;
         .content{
-            background-color: $indigo;
+            background-color: $white;
             // border-radius: 10px;
             width:100%;
             padding:30px 15px;
@@ -16,16 +16,16 @@
                 display: none;
             }
             .filter_title{
-                color: $white;
+                color: $black;
                 display: flex;
                 align-items: center;
                 padding-bottom:10px;
-                border-bottom: 2px solid $yellow;
+                border-bottom: 2px solid $text-gray;
                 text-transform: uppercase;
                 .filter_icon{
                     font-size:25px;
                     margin-right:10px;
-                    color:$yellow;
+                    color:$indigo;
                 }
                 h3{
                     font-size:18px;

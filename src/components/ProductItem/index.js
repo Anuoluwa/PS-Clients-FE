@@ -5,7 +5,7 @@ import product_placeholder from '../../assets/images/product_placeholder.jpg'
 import styles from './index.module.scss';
 import { withRouter } from 'react-router';
 
-const ProductItem = ({productName, costPerUnit, productPhotoURL, history, ...item}) => {
+const ProductItem = ({productName, costPerUnit, productPhotoURL, description, history, ...item}) => {
     return(
         <div className={styles.card_item} onClick={() => history.push(`/product/${item?._id}`)}>
             <div className={styles.drug_image}>
@@ -14,7 +14,7 @@ const ProductItem = ({productName, costPerUnit, productPhotoURL, history, ...ite
             <div className={styles.details}>
                 <div className={styles.text}>
                     <h3>{productName}</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, dicta...</p>
+                    <p>{description}</p>
                 </div>
                 <div className={styles.price_order}>
                     <h3>₦{costPerUnit}</h3>

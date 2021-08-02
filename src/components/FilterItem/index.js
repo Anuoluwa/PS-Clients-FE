@@ -1,9 +1,9 @@
 import React from 'react'; 
 import styles from './index.module.scss';
 
-const FilterItem = ({handleCategoryClick, supplierName, ...category}) => {
+const FilterItem = ({handleCategoryClick, handleSupplierClick, supplierName, ...category}) => {
     return(
-        <li onClick={handleCategoryClick} className={styles.list_item}>{category?.category ||supplierName}</li>
+        <li onClick={handleCategoryClick || handleSupplierClick} className={styles.list_item}>{category?.category ||supplierName}</li>
     )
 }
 

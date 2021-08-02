@@ -1,9 +1,10 @@
 @import '../../styles/global.scss';
 
 ._{
-    background-color: $white;
-    padding-top:20px;
-    padding-bottom:20px;
+    background-color: transparent;
+    // box-shadow: 0 1.6px 3.6px 0 rgba(0 0 0 / 13%), 0 0.3px 0.9px 0 rgba(0 0 0 / 11%);
+    // padding-top:20px;
+    // padding-bottom:20px;
     .container{
         @extend %container;
         display: flex;
@@ -11,6 +12,9 @@
         align-items: center;
         .logo{
             color:$indigo;
+            img{
+                width:200px;
+            }
             a{
                 text-decoration: none;
             }
@@ -83,9 +87,9 @@
                         margin-right: 0;
                     }
                     a{
-                        color:$text-gray;
+                        color:$white;
                         text-decoration: none;
-                        font-weight: bold;
+                        font-weight: 500;
                         &:hover{
                             color:$indigo;
                         }

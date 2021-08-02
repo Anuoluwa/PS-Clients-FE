@@ -5,6 +5,9 @@
     grid-template-columns: 300px 1fr;
     margin-top:50px;
     margin-bottom:70px;
+    padding-top:100px;
+    padding-bottom:100px;
+    background: $bg-gray;
     @extend %container;
     @media (max-width:$break-point-l) {
         grid-template-columns: 0px 1fr;

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import logo from '../../assets/images/logo.png'
 import styles from './index.module.scss';
 
-const Nav = () => {
+const Nav = ({className}) => {
 
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -12,10 +13,10 @@ const Nav = () => {
 
 
     return(
-        <div className={styles._}>
+        <div className={`${styles._} ${className}`}>
             <div className={styles.container}>
                 <div className={styles.logo}>
-                    <NavLink to="/"><h2><strong>PharmaServ</strong></h2></NavLink>
+                    <NavLink to="/"><img src={logo} alt="logo"/></NavLink>
                 </div>
                 <div className={`${menuOpen ? styles.hamburger_menu+ ' ' + styles.toggle : styles.hamburger_menu}`} onClick={showMenu}>
                     <span></span>
@@ -27,7 +28,6 @@ const Nav = () => {
                         <li><NavLink exact={true} to="/" activeClassName={styles.selected}>Products</NavLink></li>
                         <li><NavLink to="/catalogue" activeClassName={styles.selected}>Catalogue</NavLink></li>
                         <li><NavLink to="/contact" activeClassName={styles.selected}>Contact</NavLink></li>
-                        <li><NavLink to="/cart" activeClassName={styles.selected}>Cart</NavLink></li>
                     </ul>
                 </div>
             </div>

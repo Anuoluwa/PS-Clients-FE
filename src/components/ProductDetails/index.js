@@ -45,9 +45,9 @@ const ProductDetails = (props) => {
                         <h2>₦{product_details?.costPerUnit}</h2>
                     </div>
                     <div className={styles.product_tags}>
-                            <p><AiOutlineAppstore className={styles.tag_icon}/> {product_details?.category.category}</p>
-                            <p><BsDroplet  className={styles.tag_icon}/> {product_details?.composition}</p>
-                            <p><RiHospitalLine  className={styles.tag_icon}/> {product_details?.supplier.supplierName}</p>
+                            <p><AiOutlineAppstore className={styles.tag_icon}/> {product_details?.category?.category || 'N/A'}</p>
+                            <p><BsDroplet  className={styles.tag_icon}/> {product_details?.composition || 'N/A' }</p>
+                            <p><RiHospitalLine  className={styles.tag_icon}/> { product_details?.supplier?.supplierName || 'N/A'}</p>
                     </div>
                     <div className={styles.description}>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa vero minima voluptatem, praesentium, ipsam sunt perferendis assumenda enim error laborum obcaecati possimus. Maiores iste recusandae consequatur repudiandae. Ipsum, qui deserunt?</p>

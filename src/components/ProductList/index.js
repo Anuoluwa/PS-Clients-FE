@@ -36,6 +36,21 @@ const ProductList = (props) => {
 
     // Get total number of product in a category
     let total_products_in_category = products_by_category?.length
+
+    if(props.supplierName){
+        product_title = props.supplierName
+    }
+
+    // Get product by supplier 
+    const products_by_supplier = products.filter((product) => {
+        return product?.supplier?.supplierName === props.supplierName
+    })
+
+    console.log(products_by_supplier)
+
+    // Get total number of product in a category
+    let total_products_in_supplier = products_by_supplier?.length
+   
    
 
     if(isLoading){
@@ -52,17 +67,35 @@ const ProductList = (props) => {
             <div className={styles.container}>
                 <div className={styles.content}>
                     <>
-                        <ProductHeader product_title={product_title}  total_products={total_products} total_products_in_category={total_products_in_category}/>
+    
+                        {
+                            props.categoryName ? 
+                            (<ProductHeader product_title={props.categoryName}  total_products={total_products_in_category} /> ) :
+
+                            props.supplierName ? 
+                            (<ProductHeader product_title={props.supplierName}  total_products={total_products_in_supplier} /> ) : 
+                            
+                            <ProductHeader product_title={product_title}  total_products={total_products} />
+                        }
                     </>
                     <div className={styles.cards_container}>
                         {
-                            props.categoryName ? (
+                            props.categoryName  ? (
                                 total_products_in_category == 0 ? <EmptyState message="No available product in this category"/> :
                                 products_by_category.map((product) => {
                                     return(
                                         <ProductItem key={product?.id} {...product} />
                                     )
-                                })
+                                }) 
+                            ) :
+
+                            props.supplierName  ? (
+                                total_products_in_supplier == 0 ? <EmptyState message={`No available product by ${props.supplierName}`}/> :
+                                products_by_supplier.map((product) => {
+                                    return(
+                                        <ProductItem key={product?.id} {...product} />
+                                    )
+                                }) 
                             ) :
 
                             (
