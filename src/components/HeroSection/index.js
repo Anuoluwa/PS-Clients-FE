@@ -16,7 +16,7 @@ const HeroSection = () => {
             <div className={styles.container}>
                 <div className={styles.hero_text}>
                     <div className={styles.text_content}>
-                        <h1>Your Healthcare <br /> e-Procurement Partner</h1>
+                        <h1>Your Healthcare <br className={styles.desktop_break} /> e-Procurement Partner</h1>
                         <p>Save money and streamline your pharmaceutical purchasing activities, with access to over 2,000+ SKU’s.
                         We are committed to serve healthcare providers with smarter procurement solutions.</p>
                         <PrimaryButton className={styles.hero_button}>Product List</PrimaryButton>

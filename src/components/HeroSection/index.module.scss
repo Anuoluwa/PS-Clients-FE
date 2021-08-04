@@ -9,6 +9,9 @@
         right: 0;
         z-index: -99;
         width:650px;
+        @media (max-width: $break-point-s) {
+            width:400px;
+        }
         svg{
             height: 100%;
             width: 100%;
@@ -24,7 +27,11 @@
         @extend %container;
         @media (max-width:$break-point-l) {
             flex-direction: column-reverse;
-            justify-content: flex-end;
+            // justify-content: flex-end;
+            margin-top:40%
+        }
+        @media (max-width: $break-point-xxs) {
+            margin-top:30%
         }
         .hero_text{
             width:50%;
@@ -46,6 +53,17 @@
                     // background: $bg-gradient;
                     // -webkit-background-clip: text;
                     // -webkit-text-fill-color: transparent;
+                    @media (max-width: $break-point-xs) {
+                        font-size: 40px;
+                    }
+                    @media (max-width: $break-point-xxs) {
+                        font-size: 30px;
+                    }
+                    .desktop_break{
+                        @media (max-width: $break-point-xs) {
+                            display: none;
+                        }
+                    }
                 }
                 p{
                     width:400px;

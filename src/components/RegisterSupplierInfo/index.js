@@ -8,7 +8,7 @@ const RegisterSupplierInfo = () => {
         <div className={styles._}>
             <div className={styles.container}>
                 <div className={styles.text}>
-                    <h2>Register as a <br /> <span>Supplier</span></h2>
+                    <h2>Register as a <br className={styles.desktop_br} /> <span>Supplier</span></h2>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio iste quaerat cumque excepturi amet soluta nesciunt earum doloribus dolores facere?</p>
                     <PrimaryButton className={styles.register_btn}>Sign Up</PrimaryButton>
                 </div>
