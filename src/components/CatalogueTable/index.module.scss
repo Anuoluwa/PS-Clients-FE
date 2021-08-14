@@ -5,6 +5,9 @@
     margin-top:40px;
     position: sticky;
     top:0;
+    .product_header{
+        background-color: $white;
+    }
 }
 
 ._{
@@ -31,7 +34,7 @@
             grid-template-rows: 1fr;
             grid-column-gap: 0px;
             grid-row-gap: 0px;
-            color: $indigo;
+            color: $black;
             font-weight: 600;
             margin:15px 0;
             padding:0px 25px;

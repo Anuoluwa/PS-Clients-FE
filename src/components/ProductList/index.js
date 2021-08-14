@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { loadProducts } from '../../redux/actions/productAction';
 import EmptyState from '../EmptyState';
@@ -51,7 +51,17 @@ const ProductList = (props) => {
     // Get total number of product in a category
     let total_products_in_supplier = products_by_supplier?.length
    
-   
+    // Search Implementation
+    const [searchQuery, setSearchQuery] = useState('')
+    const handleSearch = (e) => {
+       setSearchQuery(e.target.value)
+    }
+
+    // Get Filtered Products 
+    const filtered_products = products.filter((product) => (
+        product.productName.toLowerCase().includes(searchQuery.toLowerCase())
+    ))
+
 
     if(isLoading){
         return(
@@ -70,18 +80,27 @@ const ProductList = (props) => {
     
                         {
                             props.categoryName ? 
-                            (<ProductHeader product_title={props.categoryName}  total_products={total_products_in_category} /> ) :
+                            (<ProductHeader product_title={props.categoryName}  total_products={total_products_in_category} searchQuery={searchQuery} handleSearch={handleSearch} /> ) :
 
                             props.supplierName ? 
-                            (<ProductHeader product_title={props.supplierName}  total_products={total_products_in_supplier} /> ) : 
+                            (<ProductHeader product_title={props.supplierName}  total_products={total_products_in_supplier} searchQuery={searchQuery} handleSearch={handleSearch}/> ) : 
                             
-                            <ProductHeader product_title={product_title}  total_products={total_products} />
+                            <ProductHeader product_title={product_title}  total_products={total_products}  searchQuery={searchQuery} handleSearch={handleSearch} />
                         }
                     </>
                     <div className={styles.cards_container}>
                         {
+                            searchQuery ? (
+                                filtered_products === 0 ? <EmptyState message="No Product Found"/> :
+                                filtered_products.map((product) => {
+                                    return(
+                                        <ProductItem key={product?._id} {...product}/>
+                                    )
+                                })
+                            ):
+
                             props.categoryName  ? (
-                                total_products_in_category == 0 ? <EmptyState message="No available product in this category"/> :
+                                total_products_in_category === 0 ? <EmptyState message="No available product in this category"/> :
                                 products_by_category.map((product) => {
                                     return(
                                         <ProductItem key={product?.id} {...product} />
@@ -90,7 +109,7 @@ const ProductList = (props) => {
                             ) :
 
                             props.supplierName  ? (
-                                total_products_in_supplier == 0 ? <EmptyState message={`No available product by ${props.supplierName}`}/> :
+                                total_products_in_supplier === 0 ? <EmptyState message={`No available product by ${props.supplierName}`}/> :
                                 products_by_supplier.map((product) => {
                                     return(
                                         <ProductItem key={product?.id} {...product} />
@@ -99,17 +118,25 @@ const ProductList = (props) => {
                             ) :
 
                             (
-                                total_products == 0 ? <EmptyState message="No Product Found"/> :
+                                total_products === 0 ? <EmptyState message="No Product Found"/> :
                                 products.map((product) => {
                                     return(
                                         <ProductItem key={product?._id} {...product}/>
                                     )
                                 })
                             )
+
+                            
                         }
+                       
                     </div>
                     <div className={styles.pagination_container}>
-                        <Pagination />
+                        <Pagination 
+                            data={products}
+                            RenderComponent={ProductItem}
+                            pageLimit={5}
+                            dataLimit={10}
+                        />
                     </div>
                 </div>
             </div>

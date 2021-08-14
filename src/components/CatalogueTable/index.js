@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from "./index.module.scss";
 import ProductHeader from '../ProductHeader';
 import CatalogueItem from '../CatalogueItem';
@@ -18,6 +18,17 @@ const CatalogueTable = (props) => {
 
     const total_products = products?.length
 
+     // Search Implementation
+     const [searchQuery, setSearchQuery] = useState('')
+     const handleSearch = (e) => {
+        setSearchQuery(e.target.value)
+     }
+ 
+     // Get Filtered Products 
+     const filtered_products = products.filter((product) => (
+         product.productName.toLowerCase().includes(searchQuery.toLowerCase())
+     ))
+
     if(isLoading){
         return(
             <LoadingState />
@@ -27,7 +38,13 @@ const CatalogueTable = (props) => {
     return(
         <>
             <div className={styles.catalogue_header}>
-                <ProductHeader total_products={total_products}/>
+                <ProductHeader 
+                    product_title="All Products"  
+                    total_products={total_products}
+                    searchQuery={searchQuery} 
+                    handleSearch={handleSearch} 
+                    className={styles.product_header}
+                    />
             </div>
             <div className={styles._}>
                 <div className={styles.container}>
@@ -43,6 +60,14 @@ const CatalogueTable = (props) => {
                     </div>
                     <div className={styles.table_body}>
                         {
+                            searchQuery ? (
+                                filtered_products === 0 ? <EmptyState message="No Product Found"/> :
+                                filtered_products.map((product) => {
+                                    return(
+                                        <CatalogueItem key={product?._id} {...product}/>
+                                    )
+                                })
+                            ):
                             total_products === 0 ? <EmptyState /> :
                             products.map((product) => (
                                 <CatalogueItem key={product?._id} {...product}/>
